@@ -44,24 +44,28 @@ export default function About() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
+              loading="lazy"
               src={fotoLoja}
               alt="Fachada da clínica"
               className="rounded-lg shadow-md cursor-pointer"
               onClick={() => setZoomImage(fotoLoja)}
             />
             <img
+              loading="lazy"
               src={recepcao}
               alt="Interior da clínica"
               className="rounded-lg shadow-md mt-8 cursor-pointer"
               onClick={() => setZoomImage(recepcao)}
             />
             <img
+              loading="lazy"
               src={salaNicolle}
               alt="Consultório"
               className="rounded-lg shadow-md -mt-8 cursor-pointer"
               onClick={() => setZoomImage(salaNicolle)}
             />
             <img
+              loading="lazy"
               src={salaMurilo}
               alt="Equipamentos"
               className="rounded-lg shadow-md cursor-pointer"
@@ -85,8 +89,9 @@ export default function About() {
             </button>
 
             <img
+              loading="lazy"
               src={zoomImage}
-              alt="Zoom"
+              alt="Zoom da imagem selecionada"
               className="max-w-full max-h-[90vh] rounded-lg shadow-lg transition-transform duration-300 transform scale-100"
             />
           </div>

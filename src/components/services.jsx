@@ -162,9 +162,10 @@ export default function Services() {
                 <h4 className="font-semibold mb-2">Facetas em Resina</h4>
                 <div className="space-y-2">
                   <img
+                    loading="lazy"
                     onClick={() => setZoomImage(facetaResina)}
                     src={facetaResina}
-                    alt="Antes"
+                    alt="Caso de Facetas em Resina mostrando antes e depois"
                     className="w-full rounded cursor-pointer"
                   />
                 </div>
@@ -176,9 +177,10 @@ export default function Services() {
                 <h4 className="font-semibold mb-2">Facetas em Porcelana</h4>
                 <div className="space-y-2">
                   <img
+                    loading="lazy"
                     onClick={() => setZoomImage(facetaPorcelana)}
                     src={facetaPorcelana}
-                    alt="Antes"
+                    alt="Mostrando o antes e depois das facetas em porcelana"
                     className="w-full rounded cursor-pointer"
                   />
                 </div>
@@ -190,9 +192,10 @@ export default function Services() {
                 <h4 className="font-semibold mb-2">Clareamento</h4>
                 <div className="space-y-2">
                   <img
+                    loading="lazy"
                     onClick={() => setZoomImage(clareamento)}
                     src={clareamento}
-                    alt="Antes"
+                    alt="Mostrando o antes e depois do clareamento dental"
                     className="w-full rounded cursor-pointer"
                   />
                 </div>
@@ -216,6 +219,7 @@ export default function Services() {
             </button>
 
             <img
+              loading="lazy"
               src={zoomImage}
               alt="Zoom"
               className="max-w-full max-h-[90vh] rounded-lg shadow-lg transition-transform duration-300 transform scale-100"

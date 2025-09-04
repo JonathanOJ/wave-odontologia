@@ -15,8 +15,9 @@ export default function Team() {
         <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <Card className="hover:shadow-lg sm:gap-6 gap-4 transition-shadow p-4 flex sm:flex-row flex-column w-full">
             <img
+              loading="lazy"
               src={fotoNicolle}
-              alt="Dra. Nicolle Trappel"
+              alt="Dra. Nicolle Trappel Especialista em Dentística Restauradora e Estética Dental"
               className="object-cover sm:w-[300px] w-full sm:h-[375px] h-[250px] rounded-lg shadow-lg"
             />
 
@@ -34,8 +35,9 @@ export default function Team() {
 
           <Card className="hover:shadow-lg sm:gap-6 gap-4 transition-shadow p-4 flex sm:flex-row flex-column w-full">
             <img
+              loading="lazy"
               src={fotoMurilo}
-              alt="Dr. Murilo Pitlovanciv"
+              alt="Dr. Murilo Pitlovanciv Especialista em Cirurgia Bucomaxilofacial e Implantodontia"
               className="object-cover sm:w-[300px] w-full sm:h-[375px] h-[250px] rounded-lg shadow-lg"
             />
 

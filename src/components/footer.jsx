@@ -8,7 +8,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src={logoBranca} className="w-[150px] h-[75px] rounded-lg" alt="Wave Odontologica Especializada" />
+              <img
+                loading="lazy"
+                src={logoBranca}
+                className="w-[150px] h-[75px] rounded-lg"
+                alt="Wave Odontologica Especializada Logo"
+              />
             </div>
             <p className="text-gray-400 text-sm">Cuidando do seu sorriso com excelência e dedicação.</p>
           </div>

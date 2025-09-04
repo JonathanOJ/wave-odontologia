@@ -15,7 +15,12 @@ export default function Navbar() {
     <nav className="container mx-auto px-4 py-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <img src={logoBranca} className="w-[150px] h-[75px]" alt="Wave Odontologica Especializada" />
+          <img
+            loading="lazy"
+            src={logoBranca}
+            className="w-[150px] h-[75px]"
+            alt="Wave Odontologica Especializada Logo"
+          />
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">

@@ -45,7 +45,12 @@ export default function Hero() {
             </div>
 
             <div className="sm:flex hidden absolute right-0 top-[-170px]">
-              <img src={fachada} alt="Clínica Wave Odontologia" className="w-[500px] h-[700px] rounded-xl" />
+              <img
+                loading="lazy"
+                src={fachada}
+                alt="Clínica Wave Odontologia Especializada em Paranaguá - Fachada"
+                className="w-[500px] h-[700px] rounded-xl"
+              />
             </div>
           </div>
         </div>
