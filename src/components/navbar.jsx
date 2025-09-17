@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button.jsx';
 import logoBranca from '@/assets/logo-wave-branca.png';
 
 export default function Navbar() {
-  const scrollSmooth = (elementId) => {
-    const contato = document.getElementById(elementId);
-    if (contato) {
-      contato.scrollIntoView({ behavior: 'smooth' });
-    }
+  const numeroWhatsApp = '5541998197571';
+
+  const redirectToWpp = () => {
+    const mensagem = 'Olá, gostaria de agendar uma consulta.';
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -49,7 +50,7 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             <span>(41) 99819-7571</span>
           </div>
-          <Button onClick={() => scrollSmooth('contato')} className="bg-orange-500 hover:bg-orange-600 cursor-pointer">
+          <Button onClick={() => redirectToWpp()} className="bg-orange-500 hover:bg-orange-600 cursor-pointer">
             <Calendar className="w-4 h-4 mr-2" />
             Agendar Consulta
           </Button>

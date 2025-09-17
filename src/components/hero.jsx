@@ -12,6 +12,13 @@ export default function Hero() {
       contato.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const numeroWhatsApp = '5541998197571';
+
+  const redirectToWpp = () => {
+    const mensagem = 'Olá, gostaria de agendar uma consulta.';
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <section id="inicio">
@@ -30,7 +37,7 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button
-                  onClick={() => scrollSmooth('contato')}
+                  onClick={() => redirectToWpp()}
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600 cursor-pointer"
                 >
