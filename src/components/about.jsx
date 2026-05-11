@@ -95,7 +95,7 @@ export default function About() {
                     loading="lazy"
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-48 sm:h-56 object-cover"
+                    className="w-full h-56 sm:h-64 object-cover"
                   />
                 </div>
               ))}

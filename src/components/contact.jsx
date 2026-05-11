@@ -101,12 +101,12 @@ export default function Contact() {
         </div>
 
         {/* Map */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-5xl mx-auto mb-16">
           <div className="rounded-2xl overflow-hidden shadow-xl border border-border/50">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.472537024115!2d-48.51823062494421!3d-25.522632136562677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94db9a5efa657bb7%3A0xefd13a7332e567a8!2sR.%20Manoel%20Corr%C3%AAa%2C%201837%20-%20Palmital%2C%20Paranagu%C3%A1%20-%20PR%2C%2083206-030!5e0!3m2!1spt-BR!2sbr!4v1753460476647!5m2!1spt-BR!2sbr"
               width="100%"
-              height="400"
+              height="350"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
