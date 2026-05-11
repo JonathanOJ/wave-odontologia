@@ -48,7 +48,7 @@ export default function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {team.map((member, index) => (
             <Card 
               key={member.name} 
@@ -58,8 +58,8 @@ export default function Team() {
               <CardContent className="p-0">
                 <div className="flex flex-col sm:flex-row">
                   {/* Image */}
-                  <div className="sm:w-2/5 relative">
-                    <div className="img-zoom-container h-64 sm:h-full sm:absolute sm:inset-0">
+                  <div className="sm:w-2/5 relative p-4 sm:pl-4 sm:py-4 sm:pr-0">
+                    <div className="img-zoom-container h-64 sm:h-full overflow-hidden rounded-xl">
                       <img
                         loading="lazy"
                         src={member.image}
@@ -68,7 +68,7 @@ export default function Team() {
                       />
                     </div>
                     {/* Gradient overlay on mobile */}
-                    <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                    <div className="sm:hidden absolute inset-4 rounded-xl bg-gradient-to-t from-card/80 to-transparent" />
                   </div>
 
                   {/* Content */}
