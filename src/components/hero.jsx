@@ -119,7 +119,7 @@ export default function Hero() {
                   <img
                     src={fachada}
                     alt="Equipe Wave Odontologia - Dentistas e fachada da clinica em Paranagua"
-                    className="w-full h-[500px] xl:h-[600px] object-cover object-top"
+                    className="w-full h-[500px] xl:h-[600px] object-cover"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />

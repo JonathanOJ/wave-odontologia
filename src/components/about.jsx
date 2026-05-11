@@ -11,9 +11,9 @@ export default function About() {
   const [zoomImage, setZoomImage] = useState(null);
 
   const images = [
-    { src: fotoLoja, alt: 'Fachada da clinica Wave Odontologia', className: '' },
+    { src: fotoLoja, alt: 'Fachada da clinica Wave Odontologia', className: 'mb-8' },
     { src: recepcao, alt: 'Recepcao da clinica', className: 'mt-8' },
-    { src: salaNicolle, alt: 'Consultorio Dra. Nicolle', className: '-mt-8' },
+    { src: salaNicolle, alt: 'Consultorio Dra. Nicolle', className: 'mb-8' },
     { src: salaMurilo, alt: 'Consultorio Dr. Murilo', className: '' },
   ];
 
