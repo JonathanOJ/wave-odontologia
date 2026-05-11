@@ -1,228 +1,207 @@
 import * as React from 'react';
+import { useState } from 'react';
 import facetaPorcelana from '@/assets/faceta-porcelana.jpg';
 import facetaResina from '@/assets/faceta-resina.jpg';
 import clareamento from '@/assets/clareamento.jpg';
-import { useState } from 'react';
-import { Star, Award, Heart, Smile, Shield, Zap, Stethoscope, Activity, Scissors, Eye } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx';
+import { 
+  Star, Award, Heart, Smile, Shield, Zap, 
+  Stethoscope, Activity, Scissors, Eye, X, ZoomIn 
+} from 'lucide-react';
+import { Badge } from '@/components/ui/badge.jsx';
+import { Card, CardContent } from '@/components/ui/card.jsx';
 
 export default function Services() {
   const [zoomImage, setZoomImage] = useState(null);
 
+  const services = [
+    {
+      icon: Smile,
+      title: 'Facetas em Resina',
+      description: 'Transformacao do sorriso com facetas em resina de alta qualidade.',
+    },
+    {
+      icon: Star,
+      title: 'Facetas em Porcelana',
+      description: 'Facetas em porcelana para resultados duradouros e naturais.',
+    },
+    {
+      icon: Zap,
+      title: 'Clareamento Dental',
+      description: 'Clareamento profissional para um sorriso mais branco e radiante.',
+    },
+    {
+      icon: Shield,
+      title: 'Implantes Dentarios',
+      description: 'Implantes de alta qualidade para reposicao de dentes perdidos.',
+    },
+    {
+      icon: Activity,
+      title: 'Aparelho Ortodontico',
+      description: 'Correcao do alinhamento dos dentes para um sorriso perfeito.',
+    },
+    {
+      icon: Eye,
+      title: 'Alinhadores Invisiveis',
+      description: 'Alternativa discreta e confortavel para o alinhamento dos dentes.',
+    },
+    {
+      icon: Stethoscope,
+      title: 'Endodontia Mecanizada',
+      description: 'Tratamento de canal com tecnologia avancada para maior precisao.',
+    },
+    {
+      icon: Scissors,
+      title: 'Tratamento de Canal',
+      description: 'Remocao de infeccoes e restauracao da saude do dente.',
+    },
+    {
+      icon: Award,
+      title: 'Extracao de Siso',
+      description: 'Extracao segura e cuidadosa dos dentes do siso.',
+    },
+    {
+      icon: Heart,
+      title: 'Odontologia Geral',
+      description: 'Atendimento completo para toda a familia com cuidado especializado.',
+    },
+  ];
+
+  const gallery = [
+    { 
+      src: facetaResina, 
+      title: 'Facetas em Resina', 
+      description: 'Antes e depois' 
+    },
+    { 
+      src: facetaPorcelana, 
+      title: 'Facetas em Porcelana', 
+      description: 'Resultado natural' 
+    },
+    { 
+      src: clareamento, 
+      title: 'Clareamento', 
+      description: 'Transformacao do sorriso' 
+    },
+  ];
+
   return (
     <section id="servicos">
-      <section className="py-16 bg-gray-50">
+      {/* Services Section */}
+      <section className="py-20 lg:py-28 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Oferecemos uma gama completa de tratamentos odontológicos especializados
+          {/* Header */}
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+              Tratamentos
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4 text-balance">
+              Nossos Servicos
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Oferecemos uma gama completa de tratamentos odontologicos especializados 
+              para cuidar do seu sorriso
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Smile className="w-5 h-5 mr-2 text-blue-600" />
-                  Facetas em Resina
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Transformação do sorriso com facetas em resina de alta qualidade.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Star className="w-5 h-5 mr-2 text-blue-600" />
-                  Facetas em Porcelana
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Facetas em porcelana para resultados duradouros e naturais.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Zap className="w-5 h-5 mr-2 text-blue-600" />
-                  Clareamento Dental
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Clareamento profissional para um sorriso mais branco e radiante.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Shield className="w-5 h-5 mr-2 text-blue-600" />
-                  Implantes Dentários
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Implantes de alta qualidade para reposição de dentes perdidos.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Activity className="w-5 h-5 mr-2 text-blue-600" />
-                  Aparelho Ortodôntico
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Correção do alinhamento dos dentes para um sorriso perfeito.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Eye className="w-5 h-5 mr-2 text-blue-600" />
-                  Alinhadores Invisíveis
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Alternativa discreta e confortável para o alinhamento dos dentes.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Stethoscope className="w-5 h-5 mr-2 text-blue-600" />
-                  Endodontia Mecanizada
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Tratamento de canal com tecnologia avançada para maior precisão.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Scissors className="w-5 h-5 mr-2 text-blue-600" />
-                  Tratamento de Canal
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Remoção de infecções e restauração da saúde do dente.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Award className="w-5 h-5 mr-2 text-blue-600" />
-                  Extração de Siso
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Extração segura e cuidadosa dos dentes do siso.</p>
-              </CardContent>
-            </Card>
-
-            <div></div>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Heart className="w-5 h-5 mr-2 text-blue-600" />
-                  Odontologia Geral
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Atendimento completo para toda a família com cuidado especializado.</p>
-              </CardContent>
-            </Card>
+          {/* Services Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {services.map((service, index) => (
+              <Card 
+                key={service.title}
+                className="card-hover border-border/50 bg-card group animate-fade-in-up"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <CardContent className="p-5">
+                  <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <service.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2 text-sm">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Galeria de Casos */}
-      <section id="galeria" className="py-16 bg-white">
+      {/* Gallery Section */}
+      <section id="galeria" className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Galeria de Casos</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja alguns dos nossos trabalhos e transformações realizadas
+          {/* Header */}
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <Badge className="mb-4 bg-accent/20 text-accent-foreground border-accent/30">
+              Resultados
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4 text-balance">
+              Galeria de Casos
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Veja alguns dos nossos trabalhos e transformacoes realizadas com excelencia
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="space-y-4">
-              <div className="bg-gray-100 rounded-lg p-4">
-                <h4 className="font-semibold mb-2">Facetas em Resina</h4>
-                <div className="space-y-2">
+          {/* Gallery Grid */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            {gallery.map((item, index) => (
+              <div 
+                key={item.title}
+                className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => setZoomImage(item.src)}
+              >
+                <div className="aspect-[4/5] img-zoom-container">
                   <img
                     loading="lazy"
-                    onClick={() => setZoomImage(facetaResina)}
-                    src={facetaResina}
-                    alt="Caso de Facetas em Resina mostrando antes e depois"
-                    className="w-full rounded cursor-pointer"
+                    src={item.src}
+                    alt={`Caso de ${item.title} mostrando antes e depois`}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="bg-gray-100 rounded-lg p-4">
-                <h4 className="font-semibold mb-2">Facetas em Porcelana</h4>
-                <div className="space-y-2">
-                  <img
-                    loading="lazy"
-                    onClick={() => setZoomImage(facetaPorcelana)}
-                    src={facetaPorcelana}
-                    alt="Mostrando o antes e depois das facetas em porcelana"
-                    className="w-full rounded cursor-pointer"
-                  />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <p className="text-primary-foreground/70 text-sm mb-1">{item.description}</p>
+                    <h3 className="text-primary-foreground font-semibold text-lg">{item.title}</h3>
+                  </div>
+                  
+                  {/* Zoom Icon */}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ZoomIn className="w-5 h-5 text-primary-foreground" />
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="bg-gray-100 rounded-lg p-4">
-                <h4 className="font-semibold mb-2">Clareamento</h4>
-                <div className="space-y-2">
-                  <img
-                    loading="lazy"
-                    onClick={() => setZoomImage(clareamento)}
-                    src={clareamento}
-                    alt="Mostrando o antes e depois do clareamento dental"
-                    className="w-full rounded cursor-pointer"
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Image Zoom Modal */}
       {zoomImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-foreground/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in"
           onClick={() => setZoomImage(null)}
         >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-4xl w-full animate-scale-in" onClick={(e) => e.stopPropagation()}>
             <button
-              className="absolute cursor-pointer top-0 right-2 text-white text-3xl font-bold z-50 hover:text-red-500 transition-colors"
+              className="absolute -top-12 right-0 text-background hover:text-primary transition-colors p-2"
               onClick={() => setZoomImage(null)}
+              aria-label="Fechar imagem"
             >
-              &times;
+              <X className="w-8 h-8" />
             </button>
 
             <img
-              loading="lazy"
               src={zoomImage}
-              alt="Zoom"
-              className="max-w-full max-h-[90vh] rounded-lg shadow-lg transition-transform duration-300 transform scale-100"
+              alt="Imagem ampliada do caso"
+              className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl"
             />
           </div>
         </div>
@@ -230,4 +209,3 @@ export default function Services() {
     </section>
   );
 }
-

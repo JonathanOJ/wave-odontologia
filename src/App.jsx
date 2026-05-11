@@ -11,22 +11,22 @@ import Footer from './components/footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Wave Odontologia | Clínica Odontológica em Paranaguá</title>
+        <title>Wave Odontologia | Clinica Odontologica em Paranagua</title>
         <meta
           name="description"
-          content="A Wave Odontologia em Paranaguá oferece facetas, implantes, clareamento e ortodontia com especialistas. Atendimento humanizado e tecnologia moderna."
+          content="A Wave Odontologia em Paranagua oferece facetas, implantes, clareamento e ortodontia com especialistas. Atendimento humanizado e tecnologia moderna."
         />
         <meta
           name="keywords"
-          content="dentista Paranaguá, odontologia especializada, faceta de porcelana, implante dentário, clareamento dental, ortodontia"
+          content="dentista Paranagua, odontologia especializada, faceta de porcelana, implante dentario, clareamento dental, ortodontia"
         />
         <meta name="author" content="Wave Odontologia" />
       </Helmet>
 
       {/* Header */}
-      <header className="bg-[#9b9b9b] shadow-sm border-b sticky top-0 z-50">
+      <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
         <Navbar />
       </header>
 
@@ -34,24 +34,23 @@ function App() {
         {/* Hero Section */}
         <Hero />
 
-        {/* Sobre a Clínica */}
+        {/* Sobre a Clinica */}
         <About />
 
         {/* Equipe */}
         <Team />
 
-        {/* Serviços */}
+        {/* Servicos */}
         <Services />
 
         {/* Contato */}
         <Contact />
-
-        {/* Footer */}
-        <Footer />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
