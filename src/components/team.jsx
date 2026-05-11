@@ -1,60 +1,104 @@
 import * as React from 'react';
 import fotoNicolle from '@/assets/foto-nicolle.jpg';
 import fotoMurilo from '@/assets/foto-murilo.jpg';
-import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card.jsx';
+import { Badge } from '@/components/ui/badge.jsx';
+import { Card, CardContent } from '@/components/ui/card.jsx';
+import { GraduationCap } from 'lucide-react';
 
 export default function Team() {
+  const team = [
+    {
+      name: 'Dra. Nicolle Trappel',
+      role: 'Dentistica Restauradora e Estetica Dental',
+      image: fotoNicolle,
+      credentials: [
+        'Graduada pelo Centro de Ensino Superior dos Campos Gerais',
+        'Especialista em Dentistica Restauradora pela ABO',
+        'Curso de Aperfeicoamento em Cirurgia Oral Menor',
+        'Especializada em estetica dental e protese',
+      ],
+    },
+    {
+      name: 'Dr. Murilo Pitlovanciv',
+      role: 'Cirurgia Bucomaxilofacial e Implantodontia',
+      image: fotoMurilo,
+      credentials: [
+        'Graduado pela Universidade Estadual de Ponta Grossa',
+        'Cirurgiao bucomaxilofacial - Residencia HRCG',
+        'Especialista em Implantodontia pela AEL',
+        'Realiza procedimentos cirurgicos e implantes',
+      ],
+    },
+  ];
+
   return (
-    <section id="equipe" className="py-16 bg-white">
+    <section id="equipe" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Nossa Equipe</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Profissionais especializados e dedicados ao seu bem-estar</p>
+        {/* Header */}
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <Badge className="mb-4 bg-accent/20 text-accent-foreground border-accent/30">
+            Nossa Equipe
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4 text-balance">
+            Profissionais Dedicados ao Seu Bem-Estar
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Conheca os especialistas que cuidarao do seu sorriso com excelencia e dedicacao
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          <Card className="hover:shadow-lg sm:gap-6 gap-4 transition-shadow p-4 flex sm:flex-row flex-column w-full">
-            <img
-              loading="lazy"
-              src={fotoNicolle}
-              alt="Dra. Nicolle Trappel Especialista em Dentística Restauradora e Estética Dental"
-              className="object-cover sm:w-[300px] w-full sm:h-[375px] h-[250px] rounded-lg shadow-lg"
-            />
+        {/* Team Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {team.map((member, index) => (
+            <Card 
+              key={member.name} 
+              className="card-hover overflow-hidden border-border/50 bg-card animate-fade-in-up"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <CardContent className="p-0">
+                <div className="flex flex-col sm:flex-row">
+                  {/* Image */}
+                  <div className="sm:w-2/5 relative">
+                    <div className="img-zoom-container h-64 sm:h-full sm:absolute sm:inset-0">
+                      <img
+                        loading="lazy"
+                        src={member.image}
+                        alt={`${member.name} - ${member.role}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Gradient overlay on mobile */}
+                    <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                  </div>
 
-            <CardContent className="sm:pt-4 px-0">
-              <CardTitle className="text-xl">Dra. Nicolle Trappel</CardTitle>
-              <CardDescription className="pt-1 pb-4">Dentística Restauradora e Estética Dental</CardDescription>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>• Graduada pelo Centro de Ensino Superior dos Campos Gerais</p>
-                <p>• Especialista em Dentística Restauradora pela ABO</p>
-                <p>• Curso de Aperfeiçoamento em Cirurgia Oral Menor</p>
-                <p>• Especializada em estética dental e prótese</p>
-              </div>
-            </CardContent>
-          </Card>
+                  {/* Content */}
+                  <div className="sm:w-3/5 p-6 lg:p-8 flex flex-col justify-center">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-primary font-medium text-sm mb-6">
+                      {member.role}
+                    </p>
 
-          <Card className="hover:shadow-lg sm:gap-6 gap-4 transition-shadow p-4 flex sm:flex-row flex-column w-full">
-            <img
-              loading="lazy"
-              src={fotoMurilo}
-              alt="Dr. Murilo Pitlovanciv Especialista em Cirurgia Bucomaxilofacial e Implantodontia"
-              className="object-cover sm:w-[300px] w-full sm:h-[375px] h-[250px] rounded-lg shadow-lg"
-            />
-
-            <CardContent className="sm:pt-4 px-0">
-              <CardTitle className="text-xl">Dr. Murilo Pitlovanciv</CardTitle>
-              <CardDescription className="pt-1 pb-4">Cirurgia Bucomaxilofacial e Implantodontia</CardDescription>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>• Graduado pela Universidade Estadual de Ponta Grossa</p>
-                <p>• Cirurgião bucomaxilofacial - Residência HRCG</p>
-                <p>• Especialista em Implantodontia pela AEL</p>
-                <p>• Realiza procedimentos cirúrgicos e implantes</p>
-              </div>
-            </CardContent>
-          </Card>
+                    <div className="space-y-3">
+                      {member.credentials.map((credential, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <GraduationCap className="w-3 h-3 text-primary" />
+                          </div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {credential}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-
