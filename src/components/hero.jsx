@@ -21,11 +21,7 @@ export default function Hero() {
     window.open(url, '_blank');
   };
 
-  const highlights = [
-    'Tecnologia de ponta',
-    'Atendimento humanizado',
-    'Especialistas qualificados',
-  ];
+  const highlights = ['Tecnologia de ponta', 'Atendimento humanizado', 'Especialistas qualificados'];
 
   const differentials = [
     {
@@ -55,7 +51,7 @@ export default function Hero() {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Content */}
@@ -63,15 +59,14 @@ export default function Hero() {
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
                 Seu dentista em Paranagua
               </Badge>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
-                Seu Sorriso Merece o{' '}
-                <span className="text-primary">Melhor Cuidado</span>
+                Seu Sorriso Merece o <span className="text-primary">Melhor Cuidado</span>
               </h1>
-              
+
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
-                Odontologia especializada em Paranagua com tecnologia de ponta e atendimento humanizado. 
-                Aqui voce encontra qualidade pensada em voce e em seu bem-estar.
+                Odontologia especializada em Paranagua com tecnologia de ponta e atendimento humanizado. Aqui voce
+                encontra qualidade pensada em voce e em seu bem-estar.
               </p>
 
               {/* Highlights */}
@@ -95,9 +90,9 @@ export default function Hero() {
                   Agendar Consulta
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button 
-                  onClick={() => scrollSmooth('servicos')} 
-                  size="lg" 
+                <Button
+                  onClick={() => scrollSmooth('servicos')}
+                  size="lg"
                   variant="outline"
                   className="border-border hover:bg-secondary hover:text-secondary-foreground"
                 >
@@ -113,20 +108,20 @@ export default function Hero() {
                 {/* Decorative elements */}
                 <div className="absolute -top-6 -left-6 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/20 rounded-full blur-2xl" />
-                
+
                 {/* Main Image */}
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src={fachada}
                     alt="Equipe Wave Odontologia - Dentistas e fachada da clinica em Paranagua"
-                    className="w-full h-[500px] xl:h-[600px] object-cover object-top"
+                    className="w-full h-[500px] xl:h-[600px] object-cover"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
                 </div>
 
                 {/* Floating Card */}
-                <div className="absolute -bottom-8 -left-8 bg-background rounded-xl shadow-xl p-4 border border-border animate-fade-in-up animation-delay-400">
+                <div className="absolute -top-8 -left-8 bg-background rounded-xl shadow-xl p-4 border border-border animate-fade-in-up animation-delay-400">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Award className="w-6 h-6 text-primary" />
@@ -144,7 +139,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block animate-bounce">
-          <button 
+          <button
             onClick={() => scrollSmooth('sobre')}
             className="w-8 h-12 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
             aria-label="Rolar para baixo"
@@ -158,22 +153,20 @@ export default function Hero() {
       <section className="py-20 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <Badge className="mb-4 bg-accent/20 text-accent-foreground border-accent/30">
-              Diferenciais
-            </Badge>
+            <Badge className="mb-4 bg-accent/20 text-accent-foreground border-accent/30">Diferenciais</Badge>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4 text-balance">
               Por que escolher a Wave?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Combinamos tecnologia avancada, equipe especializada e atendimento humanizado 
-              para oferecer a melhor experiencia odontologica.
+              Combinamos tecnologia avancada, equipe especializada e atendimento humanizado para oferecer a melhor
+              experiencia odontologica.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {differentials.map((item, index) => (
-              <Card 
-                key={item.title} 
+              <Card
+                key={item.title}
                 className={`card-hover border-border/50 bg-card animate-fade-in-up`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >

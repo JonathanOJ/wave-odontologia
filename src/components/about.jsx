@@ -11,10 +11,10 @@ export default function About() {
   const [zoomImage, setZoomImage] = useState(null);
 
   const images = [
-    { src: fotoLoja, alt: 'Fachada da clinica Wave Odontologia', className: '' },
+    { src: fotoLoja, alt: 'Fachada da clinica Wave Odontologia', className: 'mb-8' },
     { src: recepcao, alt: 'Recepcao da clinica', className: 'mt-8' },
-    { src: salaNicolle, alt: 'Consultorio Dra. Nicolle', className: '-mt-8' },
-    { src: salaMurilo, alt: 'Consultorio Dr. Murilo', className: '' },
+    { src: salaNicolle, alt: 'Consultorio Dra. Nicolle', className: 'mb-8' },
+    { src: salaMurilo, alt: 'Consultorio Dr. Murilo', className: 'mt-8' },
   ];
 
   const contactInfo = [
@@ -44,29 +44,27 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="order-2 lg:order-1">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
-              Sobre Nos
-            </Badge>
-            
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">Sobre Nos</Badge>
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
               Invista em seu sorriso
             </h2>
-            
+
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Aqui na Wave Odontologia Especializada contamos com uma equipe de dentistas 
-              especialistas, prontos para dar o melhor atendimento para voce e sua familia!
+              Aqui na Wave Odontologia Especializada contamos com uma equipe de dentistas especialistas, prontos para
+              dar o melhor atendimento para voce e sua familia!
             </p>
-            
+
             <p className="text-muted-foreground mb-10 leading-relaxed">
-              Estamos localizados no endereco Rua Manoel Correa 1837, bairro Palmital em Paranagua, 
-              com atendimento das 8h-12h e 14h-18h30. Nossa clinica foi projetada para oferecer 
-              conforto e tranquilidade durante seu tratamento.
+              Estamos localizados no endereco Rua Manoel Correa 1837, bairro Palmital em Paranagua, com atendimento das
+              8h-12h e 14h-18h30. Nossa clinica foi projetada para oferecer conforto e tranquilidade durante seu
+              tratamento.
             </p>
 
             {/* Contact Info Cards */}
             <div className="space-y-4">
               {contactInfo.map((info) => (
-                <div 
+                <div
                   key={info.label}
                   className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border/50 transition-all duration-200 hover:shadow-md hover:border-primary/20"
                 >
@@ -86,17 +84,12 @@ export default function About() {
           <div className="order-1 lg:order-2">
             <div className="grid grid-cols-2 gap-4">
               {images.map((image, index) => (
-                <div 
+                <div
                   key={index}
                   className={`img-zoom-container rounded-xl overflow-hidden shadow-lg cursor-pointer ${image.className}`}
                   onClick={() => setZoomImage(image.src)}
                 >
-                  <img
-                    loading="lazy"
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-56 sm:h-64 object-cover"
-                  />
+                  <img loading="lazy" src={image.src} alt={image.alt} className="w-full h-56 sm:h-64 object-cover" />
                 </div>
               ))}
             </div>
