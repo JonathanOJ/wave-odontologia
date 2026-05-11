@@ -51,133 +51,102 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative">
       {/* Hero Main */}
-      <div className="relative min-h-screen flex flex-col lg:flex-row overflow-hidden">
+      <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
         
-        {/* Content Side */}
-        <div className="relative z-10 flex items-center w-full lg:w-[45%] pt-24 pb-8 lg:py-0 px-4 lg:px-8 xl:px-16">
-          <div className="max-w-xl mx-auto lg:mx-0 animate-fade-in-up">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
-              Seu dentista em Paranagua
-            </Badge>
-            
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
-              Seu Sorriso Merece o{' '}
-              <span className="text-primary">Melhor Cuidado</span>
-            </h1>
-            
-            <p className="text-base lg:text-lg text-muted-foreground mb-6 leading-relaxed text-pretty">
-              Odontologia especializada em Paranagua com tecnologia de ponta e atendimento humanizado. 
-              Aqui voce encontra qualidade pensada em voce e em seu bem-estar.
-            </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Content */}
+            <div className="max-w-xl animate-fade-in-up">
+              <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
+                Seu dentista em Paranagua
+              </Badge>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
+                Seu Sorriso Merece o{' '}
+                <span className="text-primary">Melhor Cuidado</span>
+              </h1>
+              
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
+                Odontologia especializada em Paranagua com tecnologia de ponta e atendimento humanizado. 
+                Aqui voce encontra qualidade pensada em voce e em seu bem-estar.
+              </p>
 
-            {/* Highlights */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                onClick={redirectToWpp}
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 group"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar Consulta
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button 
-                onClick={() => scrollSmooth('servicos')} 
-                size="lg" 
-                variant="outline"
-                className="border-border hover:bg-secondary hover:text-secondary-foreground"
-              >
-                <Smile className="w-5 h-5 mr-2" />
-                Conhecer Servicos
-              </Button>
-            </div>
-
-            {/* Stats - visible on mobile */}
-            <div className="flex gap-6 mt-8 lg:hidden">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">+500</p>
-                  <p className="text-xs text-muted-foreground">Pacientes</p>
-                </div>
+              {/* Highlights */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                {highlights.map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">10+ Anos</p>
-                  <p className="text-xs text-muted-foreground">Experiencia</p>
-                </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  onClick={redirectToWpp}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 group"
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Agendar Consulta
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <Button 
+                  onClick={() => scrollSmooth('servicos')} 
+                  size="lg" 
+                  variant="outline"
+                  className="border-border hover:bg-secondary hover:text-secondary-foreground"
+                >
+                  <Smile className="w-5 h-5 mr-2" />
+                  Conhecer Servicos
+                </Button>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Image Side - Takes more space */}
-        <div className="relative w-full lg:w-[55%] h-[50vh] sm:h-[60vh] lg:h-screen animate-fade-in">
-          {/* Decorative elements */}
-          <div className="absolute top-1/4 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2" />
-          <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-accent/20 rounded-full blur-2xl translate-x-1/2" />
-          
-          {/* Main Image Container */}
-          <div className="relative h-full">
-            <img
-              src={fachada}
-              alt="Equipe Wave Odontologia - Dentistas especializados e fachada da clinica em Paranagua"
-              className="w-full h-full object-cover lg:rounded-l-3xl"
-            />
-            {/* Subtle overlay for better contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-transparent lg:rounded-l-3xl" />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent lg:rounded-l-3xl" />
-          </div>
+            {/* Image */}
+            <div className="relative hidden lg:block animate-fade-in animation-delay-200">
+              <div className="relative">
+                {/* Decorative elements */}
+                <div className="absolute -top-6 -left-6 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/20 rounded-full blur-2xl" />
+                
+                {/* Main Image */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={fachada}
+                    alt="Equipe Wave Odontologia - Dentistas e fachada da clinica em Paranagua"
+                    className="w-full h-[650px] object-cover"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+                </div>
 
-          {/* Floating Card - Desktop only */}
-          <div className="hidden lg:block absolute bottom-12 left-8 bg-background/95 backdrop-blur-sm rounded-xl shadow-2xl p-5 border border-border animate-fade-in-up animation-delay-400">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                <Award className="w-7 h-7 text-primary" />
-              </div>
-              <div>
-                <p className="font-bold text-foreground text-xl">+500</p>
-                <p className="text-sm text-muted-foreground">Pacientes satisfeitos</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Second Floating Card */}
-          <div className="hidden lg:block absolute top-24 left-8 bg-background/95 backdrop-blur-sm rounded-xl shadow-2xl p-4 border border-border animate-fade-in-up animation-delay-600">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">10+ Anos</p>
-                <p className="text-xs text-muted-foreground">de experiencia</p>
+                {/* Floating Card */}
+                <div className="absolute -bottom-8 -left-8 bg-background rounded-xl shadow-xl p-4 border border-border animate-fade-in-up animation-delay-400">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Award className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">+500</p>
+                      <p className="text-sm text-muted-foreground">Pacientes satisfeitos</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block animate-bounce z-20">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block animate-bounce">
           <button 
             onClick={() => scrollSmooth('sobre')}
-            className="w-8 h-12 rounded-full border-2 border-muted-foreground/30 bg-background/50 backdrop-blur-sm flex items-start justify-center p-2"
+            className="w-8 h-12 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
             aria-label="Rolar para baixo"
           >
             <div className="w-1 h-3 bg-muted-foreground/50 rounded-full" />
