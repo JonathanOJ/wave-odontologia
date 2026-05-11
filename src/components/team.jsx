@@ -58,8 +58,8 @@ export default function Team() {
               <CardContent className="p-0">
                 <div className="flex flex-col sm:flex-row">
                   {/* Image */}
-                  <div className="sm:w-2/5 relative p-4 sm:pl-4 sm:py-4 sm:pr-0">
-                    <div className="img-zoom-container h-64 sm:h-full overflow-hidden rounded-xl">
+                  <div className="sm:w-2/5 relative p-4">
+                    <div className="img-zoom-container h-64 sm:h-56 overflow-hidden rounded-xl">
                       <img
                         loading="lazy"
                         src={member.image}
