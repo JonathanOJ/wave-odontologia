@@ -47,24 +47,24 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative">
       {/* Hero Main */}
-      <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div className="relative min-h-screen lg:min-h-[90vh] xl:min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-center">
             {/* Content */}
             <div className="max-w-xl animate-fade-in-up">
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
                 Seu dentista em Paranagua
               </Badge>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight text-balance">
                 Seu Sorriso Merece o <span className="text-primary">Melhor Cuidado</span>
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
+              <p className="text-base lg:text-sm xl:text-base 2xl:text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
                 Odontologia especializada em Paranagua com tecnologia de ponta e atendimento humanizado. Aqui voce
                 encontra qualidade pensada em voce e em seu bem-estar.
               </p>
@@ -106,7 +106,7 @@ export default function Hero() {
             <div className="relative hidden lg:block animate-fade-in animation-delay-200">
               <div className="relative">
                 {/* Decorative elements */}
-                <div className="absolute -top-6 -left-6 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -top-6 -left-6 w-48 h-48 xl:w-72 xl:h-72 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/20 rounded-full blur-2xl" />
 
                 {/* Main Image */}
@@ -114,7 +114,7 @@ export default function Hero() {
                   <img
                     src={fachada}
                     alt="Equipe Wave Odontologia - Dentistas e fachada da clinica em Paranagua"
-                    className="w-full h-[500px] xl:h-[600px] object-cover"
+                    className="w-full h-[360px] xl:h-[460px] 2xl:h-[560px] object-cover"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
